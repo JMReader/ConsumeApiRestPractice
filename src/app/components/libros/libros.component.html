@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<div class="body1">
+    <h1>Slider De imagenes</h1>
+    <div class="contenedor--btn">
+        <button class="btn btn-primary"  (click)="cambiar()" *ngIf="destacados==false">mostrar Libros Destacados</button>
+        <button class="btn btn-primary" (click)="cambiar()" *ngIf="destacados==true" >mostrar Todos Los Libros</button>
+
+        <button class="btn btn-primary" routerLink="/crearLibro" >Dar de alta un libro </button>
+    </div>
+
+     <div class="slider">
+         <button  class="btn btn-light d-none d-md-flex" (click)="anterior()" > Anterior </button>
+         <button  class="btn btn-light d-flex d-md-none d-bg-none" (click)="anterior()" > A </button>
+         <img  src="{{libros[cont].imagen}}" alt="" srcset="">
+         
+         <button  class="btn btn-light d-none d-md-flex" (click)="siguiente()" >Siguiente</button>
+         <button  class="btn btn-light d-flex d-md-none d-bg-none" (click)="anterior()" > S </button>
+     </div>
+ 
+     <div class="cont-des" >
+         <div class="row justify-content-center">
+             <h3 class="titulo col-5">{{libros[cont].titulo}}</h3>
+         </div>
+         <div class="row justify-content-center">
+             <p class="descrip ">{{libros[cont].descripcion}}</p>
+         </div>
+         <div class="especificaciones">
+            <p class="esp__destacado" *ngIf="libros[cont].destacado==true">Este libro es destacado por los editores</p>
+            <p class="esp__stock" [style.color]="libros[cont].stock<5 ? 'red' : 'Black'">Actualmente nos quedan {{libros[cont].stock}} de estos libros en nuestro almacen </p>
+         </div>
+     </div>
+
+    
+     
+     
+ 
+ 
+ </div>

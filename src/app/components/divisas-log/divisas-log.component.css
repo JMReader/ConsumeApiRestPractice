@@ -1,0 +1,8 @@
+.cont-f{
+    display: flex;
+    margin: 12px 0px;
+}
+.cont-f div{
+    margin: 2px 14px;
+}
+

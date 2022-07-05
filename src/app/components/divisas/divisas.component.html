@@ -1,0 +1,88 @@
+<app-header></app-header>
+<div class="row">
+    <div class="  d-none d-md-block col-md-8  bg-primary ">
+       <b class="s-titulo">TABLA  de tasa de conversiones (TSC)</b> 
+        <table class="table table-striped  ">
+            
+                
+           
+            <thead>
+                <tr>
+                    <th> </th>        
+                        <th *ngFor="let m of monedas">{{m}}                            
+                        </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr >
+                    <td>TSC de 1 {{monedas[0]}}  </td>
+                    <td>1.000000</td>
+                    <td>0,96</td>
+                    <td>0,000043</td>
+                </tr>
+                <tr>
+                    <td>TSC de 1 {{monedas[1]}}  </td>
+                    <td>1,04</td>
+                    <td>1.000000</td>
+                    <td>0,000045</td>
+                </tr>
+                <tr>
+                    <td>TSC de 1 {{monedas[2]}}</td>
+                    <td>23.269,70</td>
+                    <td>22.353,11</td>
+                    <td>1.000000</td>
+                </tr>
+            </tbody>
+            
+          </table>
+          <button  class="btn btn-warning btw" routerLink="/divisasLog" >ver transacciones Realizadas</button>
+    </div>
+    <div class="d-block d-md-block col-md-4 col-sm-12 bg-warning " *ngIf="validado==false">
+        <form action="" class="regist" [formGroup]="emailForm"> 
+        <div>
+            <label for="exampleInputEmail" class="form-label col-sm-12">Registrese Con su email para poder realizar conversiones </label>
+            <input formControlName="email" class="inp" id="exampleInputEmail" type="email" class="form-control" [(ngModel)]="tscc.emailCliente"   >
+          </div>
+          <button [disabled]="emailForm.invalid" type="submit" class="btn btn-primary botonac"(click)="acceder()">Acceder</button>
+        </form>
+    </div>
+
+
+
+    <div class="d-block d-md-block col-md-4 col-sm-12 bg-warning " *ngIf="validado==true">
+        <form>
+            <div >
+              <label for="exampleInputEmail1" class="form-label col-sm-12" >Elija cantidad a conertir </label>
+              <input type="number" class="form-control" placeholder="1" [(ngModel)]="tscc.cantidadOrigen" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div  >
+              <label for="exampleInputPassword1" class="form-label col-sm-12">Elija divisa a convertir</label>
+              <select class="form-select col-sm-12" [(ngModel)]="tscc.monedaOrigen" [ngModelOptions]="{standalone: true}" >
+                <option *ngFor="let m of monedas" value="{{m}}" >{{m}}</option>
+              </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Convertir a</label>
+                <select class="form-select" [(ngModel)]="tscc.monedaDestino" [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let m of monedas" value="{{m}}" >{{m}}</option>
+                </select>
+                <div >
+                    <label for="tasaConversion" class="form-label col-sm-12">Introduzca tasa de conversion </label>
+                    <input id="tasaConversion"  [(ngModel)]="tscc.tasaConversion" [ngModelOptions]="{standalone: true}" type="number" class="form-control" placeholder="1" >
+                  </div>
+              </div>
+              <input type="number" class="form-control" placeholder="devolucion" [(ngModel)]="tscc.cantidadDestino" [ngModelOptions]="{standalone: true}" disabled>
+              <br>
+
+              <div class="container-botones col-sm-12">
+                <button type="submit" class="btn btn-primary" (click)="crear()">Convertir</button>
+                <button type="submit" class="btn btn-danger" (click)="acceder()">Cerrar sesion </button>
+              </div>
+            
+            <br>
+            <br>
+          </form>
+    </div>
+</div>
+
+

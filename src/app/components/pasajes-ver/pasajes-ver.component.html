@@ -1,0 +1,62 @@
+
+<app-header></app-header>
+<Div class="contenedorF">
+
+
+  <h4>
+    Pasajes actuales
+   </h4>
+     <table class="table table-dark table-hover table-responsive">
+         <thead>
+           <tr>
+             <th scope="col"></th>
+             <th scope="col">Dni Pasajero</th>
+             <th scope="col">Precio del pasaje</th>
+             <th scope="col">Categoria Pasajero</th>
+             <th scope="col">Fecha de la compra</th>
+             <th></th>
+             <th></th>
+             
+           </tr>
+         </thead>
+         <tbody *ngFor="let p of pasajeTodos">
+           <tr>
+             <th scope="row"></th>
+             <td>{{p.pasajero.dni}}</td>
+             <td>{{p.precioPasaje}} USD</td>
+             <td>{{p.categoriaPasajero}} </td>
+             <td>{{p.fechaCompra}}</td>
+             <td><button class="btn btn-danger" (click)="eliminar(p._id)">Eliminar</button>  </td>
+             <td> <button class="btn btn-warning" routerLink="/editarPasaje/{{p._id}}" >Editar</button></td>
+             
+           </tr>
+          
+         </tbody>
+       </table>
+       <h4>
+        Cantidad De Categoria de pasajeros
+       </h4>
+       <table class="table table-dark table-hover table-responsive ulti">
+         <thead>
+           <tr>
+             <th scope="col">menores</th>
+             <th scope="col">Adultos</th>
+             <th scope="col">Jubilados</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <th scope="row">{{contm}}</th>
+             <td>{{conta}} </td>
+             <td>{{contj}} </td>
+           </tr>
+          
+         </tbody>
+       </table>
+
+
+       <button class="btn btn-primary" routerLink="/cargarPasajes">Dar de alta pasaje</button>
+ 
+ 
+ </Div>
+ 

@@ -1,0 +1,16 @@
+.frm{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding : 6px auto;
+}
+.cont{
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+    background-color: rgb(153, 185, 212);
+    border-radius: 6px;
+}
+form div {
+    margin: 6px 0;
+}

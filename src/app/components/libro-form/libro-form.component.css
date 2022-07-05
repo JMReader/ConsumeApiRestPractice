@@ -1,0 +1,14 @@
+form{
+    align-items: center;
+    width: 70vw;
+    justify-content: center;
+}
+.contFlex{
+    display: flex;
+    justify-content: center;
+}
+.ast{
+    color: red;
+    font-size: 18px;
+    display: inline;
+}

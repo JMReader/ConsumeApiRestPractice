@@ -1,0 +1,24 @@
+.s-titulo{
+    margin-left: 12px;
+    
+}
+.regist{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 45px;
+}
+.inp{
+    width: 50%;
+}
+.botonac{
+    margin-top: 10px;
+}
+.container-botones{
+display: flex;
+justify-content: space-around;
+}
+.btw{
+    margin: 6px
+}

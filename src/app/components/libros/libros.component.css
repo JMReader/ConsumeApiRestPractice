@@ -1,0 +1,52 @@
+.especificaciones{
+    justify-content: center;
+    display: flex;
+}
+.especificaciones p {
+    margin: 6px 12px ;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.contenedor--btn{
+padding: 2px 8px;
+display: flex;
+justify-content: space-around;
+}
+img{
+    width: 40vw;
+    height: 30vw;
+    object-fit: contain;
+    border-radius: 16px;
+    margin: 0 8px;
+}
+.slider{
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.body1{
+    flex-direction: column;
+    align-items: center;
+}
+.titulo{
+    width: 70vw;
+    text-align: center;
+}
+
+.descrip{
+    color: rgb(0, 44, 95);
+    font-size: 20px;
+    width: 70vw;
+}
+.con{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h1{
+    text-align: center;
+    margin-top: 6px;
+    color: white;
+    background-color: rgba(83, 167, 240, 0.529);
+    padding: 0 4px;
+}

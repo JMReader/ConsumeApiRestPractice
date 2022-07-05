@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="contFlex">
+<form [formGroup]="libForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nombre del Libro <p class="ast">*</p> </label>
+      <input formControlName="nombre" type="text" class="form-control" id="exampleInputEmail1"  [(ngModel)]="lib.titulo"  >
+      <div class="invalid-feedback">
+        Please choose a username.
+      </div>
+    </div>
+    <div class="mb-3">
+        <textarea formControlName="descripcion" class="form-control" [(ngModel)]="lib.descripcion"  placeholder="Descripción del libro ***" id="floatingTextarea2" style="height: 100px" required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="imgg" class="form-label">Imagen(url)</label>
+      <input type="url" class="form-control" id="imgg" aria-describedby="emailHelp"  [(ngModel)]="lib.imagen" [ngModelOptions]="{standalone: true}" >
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="lib.destacado" [ngModelOptions]="{standalone: true}">
+      <label class="form-check-label" for="exampleCheck1" >Es destacado entre los editores ?</label>
+    </div>
+    <div class="mb-3">
+        <label for="stock" class="form-label">Stock <p class="ast">*</p></label>
+        <input formControlName="stock" type="number" class="form-control" id="stock" [(ngModel)]="lib.stock"   >
+      </div>
+    <button [disabled]="libForm.invalid" type="submit" (click)="subir()" class="btn btn-primary">Subir libro</button>
+    <p>Los parametros con <b style="color: red;">"*"</b> Son obligatorios </p>
+  </form>
+  
+</div>
+
