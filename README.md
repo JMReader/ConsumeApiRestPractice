@@ -1,6 +1,10 @@
-# TrabajoPractico5
+# App Angulaar Api Rest consume practice
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+This project was generated with Angular CLi. 
+In this project i practice how to consume and add data to a api REST and how handle this data in a frontend framework like Angular.
+
+-------
+
 
 ## Development server
 
